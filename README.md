@@ -1,5 +1,5 @@
 
-# infationcacl
+# TristateTask App
 
 
 Ios : [![Build status](https://build.appcenter.ms/v0.1/apps/0eee2000-46eb-4664-beec-99a29133c76f/branches/dev/badge)](https://appcenter.ms)

@@ -17,7 +17,7 @@ export default class UnderDevScreen extends Component {
 
       slideValue: [],
 
-      minDistance: 1,
+      minDistance: 0,
       maxDistance: 25,
       data: [
         {key: 'Slider1'},
@@ -42,6 +42,9 @@ export default class UnderDevScreen extends Component {
         {key: 'Slider20'},
         {key: 'Slider21'},
         {key: 'Slider22'},
+        {key: 'Slider23'},
+        {key: 'Slider24'},
+        {key: 'Slider25'},
       ],
     };
   }
@@ -58,7 +61,8 @@ export default class UnderDevScreen extends Component {
     callSlide(index)
     {
 
-        if (index == undefined) {
+
+        if (this.state.slideValue[index] == undefined) {
                  
           alert("select slider")
         }
@@ -67,6 +71,8 @@ export default class UnderDevScreen extends Component {
      
 
         else{
+
+          console.log("slideValue==",this.state.slideValue[index]);
 
            alert(this.state.slideValue[index])
         }
@@ -102,7 +108,7 @@ export default class UnderDevScreen extends Component {
               <View>
                 <Text
                   style={styles.item}
-                  onPress={this.getListViewItem.bind(this, item)}>
+                  >
                   {item.key}
                 </Text>
                 <Slider

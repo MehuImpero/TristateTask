@@ -107,13 +107,16 @@ export default class signInScreen extends Component {
     async callLoginApi() {
 
 
-        AsyncStorage.getItem('access_token')
-        .then(req => JSON.parse(req))
-        .then((data) => {  
-            console.log("access_token ==== ",data);
-            this.setState({tiToken:data});
-        })
+       
 
+     if(this.state.tiToken == "" || this.state.tiToken ==null){
+
+        this.getToken();
+
+        this.callLoginApi();
+     }
+
+     else{
         this.setState({isLoading :true})
         let formdata = new FormData();
         formdata.append("mobile_no", this.state.tiNumber)
@@ -151,6 +154,8 @@ export default class signInScreen extends Component {
 
                 
             })
+     }
+            
     }
 
 
@@ -166,7 +171,6 @@ export default class signInScreen extends Component {
         }
 
         else{
-
            this.callLoginApi();
         }
 
